@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>dev_app_page</title>
+{% endblock%}
+
+{% block body%}
+<h3>{{name}}</h3>
+<p>
+	<ul>
+	<li>Size: {{size}} </li>
+	<li>Rating: {{rating}} </li>
+	<li>Price: {{price}} </li>
+	<li>Category: {{category}}</li>
+	<li>content rating: {{cont_rating}}</li>
+	<li>languages supported: {{num_lang}}</li>
+	<li>licensed : {{license}}</li>
+	<li>description :{{app_desc}}</li>
+	</ul>
+</p>
+
+<div>
+	<h3>REVIEWS:</h3>
+	<ol>
+	{% for r in review%}
+		<li> {{r[0]}}: {{r[1]}}</li>
+    {% endfor %}
+	</ol>
+</div>
+
+<div>
+	<h3>USERS:</h3>
+	<ol>
+	{% for user_name in users%}
+		<li>{{user_name}}</li>
+	{%endfor%}
+	</ol>
+</div>
+

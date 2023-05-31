@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>User_profile</title>
+<head>
+	<style>
+		html{
+			background-color: azure;
+		}
+	</style>
+</head>
+{% endblock%}
+
+{% block body%}
+
+<div>
+	<h3> Username: {{ input_name }}</h3>
+	<h3> EmailId: {{ input_emailid}}</h3>
+<ul>
+	<li> <a href = '/user_editprofile' style="text-decoration:none"> Edit profile </a></li>
+	<li> <a href = '/user_reviews' target="_blank" style="text-decoration:none"> My reviews </a></li>
+	<li> <a href = '/user_searchhistory' target="_blank" style="text-decoration:none"> Search history </a></li>
+	<li> <a href = '/delete_useraccount' style="text-decoration:none"> Delete account </a></li>
+</ul>
+</div>
+<h3> Installed apps </h3>
+<div>
+<ol>
+  {% for app in apps_list %}
+    <li><a href="/user_app_page/{{app[0]}}" style="text-decoration:none"><h3>{{app[1]}}</h3></a></li>
+  {% endfor %}
+</ol>
+</div>
+{%endblock%}

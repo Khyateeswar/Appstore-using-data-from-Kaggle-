@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>search history</title>
+<head>
+	<style>
+		html{
+			background-color: azure;
+		}
+	</style>
+</head>
+{% endblock%}
+
+{% block body%}
+
+<h3> My History </h3>
+<div>
+<ol>
+{% for search in search_history%}
+	<li><h4>{{search}}</h4></li>
+{%endfor%}
+</ol>
+</div>
+{% endblock%}

@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>My reviews</title>
+<head>
+	<style>
+		html{
+			background-color: azure;
+		}
+	</style>
+</head>
+{% endblock%}
+
+{% block body%}
+
+<h3> My reviews: </h3>
+
+<div>
+<ol>
+{% for r in reviews %}
+	<li><h4>{{r[0]}} : {{r[1]}}</h4></li>
+{%endfor%}
+</ol>
+</div>
+{% endblock%}

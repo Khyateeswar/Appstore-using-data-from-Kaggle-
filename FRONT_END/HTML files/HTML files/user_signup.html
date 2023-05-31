@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>user_signup</title>
+{% endblock%}
+
+{% block body%}
+<head>
+<style>
+fieldset{
+	font-size:15px;
+	padding:10px;
+	width:350px;
+	line-height:1.8;
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+</style>
+</head>
+
+<div>
+<fieldset>
+	<legend> <h2>Users </h2> </legend>
+	<ul>
+	<form class='form' method="post" action="/user_signup_result">
+		<li>Name&emsp;&ensp;&nbsp;:<input type="text" id="username" name="username" required="required" placeholder="Username : No Spaces"><br>
+        <li>Email&emsp;&ensp;&nbsp;:<input type="email" id="emailid" name="emailid" required="required" placeholder="Your Email Id : No Spaces"><br>
+        <li>password :<input type="password" id="password" name="password" required="required" maxlength="10" placeholder="Password : max 10 characters"> <br><br>
+        <input type="submit" value="DONE">
+    </form>
+	</ul>
+</fieldset>
+</div>
+{%endblock%}

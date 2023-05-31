@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>dev_home</title>
+
+{% endblock%}
+
+{% block body%}
+<br>
+<ul>
+<li><a href = '/dev_profile' target="_blank" style="text-decoration:none"> MY PROFILE </a></li>
+<li><a href = '/upload_app' target="_blank" style="text-decoration:none"> UPLOAD APP </a></li>
+<li><a href='/logout' style="text-decoration:none">LOGOUT</a><br>
+</ul>
+<h2> MY APPS</h2>  
+<div>
+<p> To get app_info , reviews and its users, click on the app name </p>
+   <ol>
+  {% for app in apps_list %}
+    <li>
+	<a href="/dev_app_page/{{app[0]}}" target="_blank" style="text-decoration:none"><h3>{{app[1]}} </h3></a>
+	<h4>Rating :{{app[2]}}  Price :{{app[3]}}   Category :{{app[4]}}</h4>
+	</li>
+  {% endfor %}
+</div>
+
+<script>
+</script>
+{%endblock%}

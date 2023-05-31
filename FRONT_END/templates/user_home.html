@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>user_home</title>
+<head>
+	<style>
+		html{
+			background-color: azure;
+		}
+	</style>
+</head>
+{% endblock%}
+
+{% block body%}
+<div>
+<ul>
+<li><a href = '/user_profile' style="text-decoration:none"> MY PROFILE</a></li>
+<li><a href = '/user_suggestions' target="_blank" style="text-decoration:none"> SUGGESTIONS </a></li>
+<li><a href = '/filter_apps' style="text-decoration:none"> FILTERS </a></li>
+<li><a href='/logout' style="text-decoration:none">LOGOUT</a></li>
+</ul>
+<br>
+</div>
+<div>
+<form text-align="center" class='form' method="post" action="/search" text-align=:center>
+  <input type="search" id="search" name="search" placeholder=" Search App..Type Name">
+  <input type="submit" value="Enter">
+</form> 
+</div>
+<h2>APPS</h2>
+<div>
+<ul>
+  {% for app in apps_list %}
+    <li>
+	<a href="/user_app_page/{{app[0]}}" style="text-decoration:none"><h3>{{app[1]}} </h3></a>
+	<h4>Rating :{{app[2]}} &emsp; Price :{{app[3]}}  &emsp; Category :{{app[4]}}</h4>
+	</li>
+  {% endfor %}
+</ul>
+</div>
+
+<script>
+</script>
+{%endblock%}

@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>user_suggestions</title>
+<head>
+	<style>
+		html{
+			background-color: azure;
+		}
+	</style>
+</head>
+{% endblock%}
+
+{% block body%}
+</div>
+<h2>Apps you may be looking for:</h2>
+<div>
+<ol>
+  {% for app in apps_list %}
+    <li>
+	<a href="/app_page/{{app[0]}}" style="text-decoration:none"><h3>{{app[1]}} </h3></a>
+	<h4>Rating :{{app[2]}} &emsp; Price :{{app[3]}}  &emsp; Category :{{app[4]}}</h4>
+	</li>
+  {% endfor %}
+</ol>
+</div>
+
+<script>
+</script>
+{%endblock%}

@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%block head%} 
+    <title>LOGIN</title>
+{% endblock%}
+
+{% block body%}
+<head>
+<style>
+fieldset{
+	font-size:15px;
+	padding:10px;
+	width:350px;
+	line-height:1.8;
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+</style>
+</head>
+<div>
+	<fieldset>
+	<legend> <h2>LOGIN</h2> </legend>
+	<form class="form" method="post" action="/login_result">
+	<ul>
+		<li>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" id="name" name="name" required="required" placeholder="name"></li>
+        <li>Password: <input type="password" id="password" name="password" required="required" maxlength="10" placeholder="Password.max 10 characters"></li><br>
+        <input type="radio" id="user" name="identity" value="user">
+        <label for="user">I'm User</label> 
+        <input type="radio" id="developer" name="identity" value="developer">
+        <label for="developer">I'm Developer</label><br><br>
+        <input type="submit" value="Submit"><br>
+	</ul>
+	</form>
+	Not a member?<br>
+	<ul>
+	<li><a href= '/user_signup'> Signup as User </a></li>
+	<li><a href= '/dev_signup'> Signup as Developer </a></li>
+	</ul>
+	</fieldset>
+</div>
+
+{%endblock%}
+	

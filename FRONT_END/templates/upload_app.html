@@ -1,0 +1,73 @@
+{%extends 'base.html'%}
+{%block head%} 
+    <title>upload app</title>
+{% endblock%}
+{% block body%}
+
+<head>
+<style>
+	html{
+		background-color: azure;
+	}
+fieldset{
+	background-color: lavenderblush;
+	font-size:15px;
+	padding:10px;
+	width:400px;
+	line-height:1.5;
+	margin-left: 35%;
+}
+
+</style>
+</head>
+
+<div>
+<fieldset>
+	<legend> <h2> New App </h2> </legend>
+	<form class="form" method="post" action="/upload_appdone">
+	<ul>
+		<h4><li>app name &emsp;&emsp;&ensp;:<input type="text" id="app_name" name="app_name" required="required" placeholder="App Name"></li></h4>
+		<h4><li>size &emsp;&emsp;&emsp;&emsp;&emsp;:<input type="number" id="size" name="size" required="required" placeholder = "App size(nearest integer)"></li></h4>
+		<h4><li>Price &emsp;&emsp;&emsp;&emsp;&ensp;:<input type="number" id="price" name="price" required="required" placeholder="Price"></li></h4>
+		<h4><li> Select category :
+		<select name="category">
+		<option value="Shopping">Shopping</option>
+		<option value="Games">Games</option>
+		<option value="Education">Education</option>
+		<option value="Reference">Reference</option>
+		<option value="Business">Business</option>
+		<option value="Social Networking">Social Networking</option>
+		<option value="Food & Drink">Food & Drink</option>
+		<option value="Sports">Sports</option>
+		<option value="Catalogs">Catalogs</option>
+		<option value="Weather">Weather</option>
+		<option value="Book">Book</option>
+		<option value="Music">Music</option>
+		<option value="Entertainment">Entertainment</option>
+		<option value="Medical">Medical</option>
+		<option value="Utilities">Utilities</option>
+		<option value="Travel">Travel</option>
+		<option value="Navigation">Navigation</option>
+		<option value="Photo & Video">Photo & Video</option>
+		<option value="Finance">Finance</option>
+		<option value="Health & Fitness">Health & Fitness</option>
+		<option value="News">News</option>
+		<option value="Productivity">Productivity</option>
+		<option value="Lifestyle">Lifestyle</option>
+		</select></li> </h4>
+		<h4><li>num_lang &emsp;&emsp;&ensp;:<input type="number" id="num_lang" name="num_lang" required="required" placeholder="num_lang"></li></h4>
+		<h4><li> Licensed &emsp;&emsp;&emsp;:
+		<select name="licensed">
+		<option value="yes">Yes</option>
+		<option value="no"> No </option>
+		</select></li></h4>
+		<h4><li>cont_rating &emsp;&emsp;:<input type="text" id="cont_rating" name="cont_rating" required="required" placeholder="cont_rating"></li></h4>
+		<h4><li>App description :<br><br><textarea name="app_description" cols="40" rows="4" required="required" placeholder="description"></textarea></li></h4>
+		<input type="submit" value="Upload">
+	</ul>
+		
+	</form>
+</fieldset>
+</div>
+{%endblock%}
+		

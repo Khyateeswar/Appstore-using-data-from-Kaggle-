@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>dev_editprofile</title>
+{% endblock%}
+
+{% block body%}
+
+<head>
+<style>
+fieldset{
+	font-size:15px;
+	padding:10px;
+	width:350px;
+	line-height:1.8;
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+</style>
+</head>
+
+<div>
+<fieldset>
+	<legend> <h2>New profile</h2> </legend>
+	<form class="form" method="post" action='/dev_editdoneprofile'>
+	<ul>
+		<li>Name&emsp;&ensp;:<input type="text" id="new_devname" name = "new_devname" required="required" placeholder = "Developer Name"></li><br>
+		<li>email&emsp;&ensp;: <input type="email" id="new_emailid" name = "new_emailid" required="required" placeholder = "email Id"></li><br>
+		<li>password: <input type="password" id="new_password" name="new_password" required="required" maxlength="10" placeholder = "password. max_length 10"></li><br>
+		<input type="submit" value="Edit">
+	</ul>
+	</form>
+</fieldset>
+</div>
+{%endblock%}

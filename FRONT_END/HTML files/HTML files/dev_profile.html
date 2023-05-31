@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>dev_profile</title>
+{% endblock%}
+
+{% block body%}
+<h2> MY PROFILE </h2>
+
+<div>
+	<h4><li>Developername: {{ input_name }}</li><br>
+	<li> EmailId: {{ input_emailid}}</li><br></h4>
+	<h4> <a href = '/dev_editprofile' style="text-decoration:none"> Edit profile </a> </h4>
+	<h4> <a href = '/delete_devaccount' style="text-decoration:none"> Delete account </a> <h4>
+</div>
+{%endblock%}

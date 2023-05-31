@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>user_editprofile</title>
+{% endblock%}
+
+{% block body%}
+<head>
+<style>
+	html{
+		background-color: azure;
+	}
+fieldset{
+	background-color: oldlace;
+	font-size:15px;
+	padding:10px;
+	width:350px;
+	line-height:1.5;
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+</style>
+</head>
+
+<div>
+<fieldset>
+	<legend> <h2> New Profile </h2> </legend>
+	<form class="form" method="post" action='/user_editdoneprofile'>
+	<ul>
+		<li>Name&emsp;&ensp;:<input type="text" id="new_username" name = "new_username" required="required" placeholder = "User Name"></li><br>
+		<li>Email&emsp;&ensp;:<input type="email" id="new_emailid" name = "new_emailid" required="required" placeholder = "email Id"></li><br>
+		<li>Password:<input type="Password" id="new_password" name="new_password" required="required" maxlength="10" placeholder = "password.max 10 characters"></li><br>
+		<input type="submit" value="Edit">
+	</ul>
+	</form>
+</fieldset>
+</div>
+{%endblock%}

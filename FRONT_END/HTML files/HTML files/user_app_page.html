@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{%block head%} 
+<title>user_app_page</title>
+{% endblock%}
+
+{% block body%}
+
+
+<h2>{{name}}</h2>
+
+<p>
+	<ul>
+		<li>Size: {{size}}</li>
+		<li>Rating: {{rating}}</li>
+		<li>Price: {{price}} </li>
+		<li>Category: {{category}}</li>
+		<li>content rating: {{cont_rating}}</li>
+		<li>languages supported: {{num_lang}}</li>
+		<li>licensed : {{license}}</li>
+		<li>description :{{app_desc}}</li>
+	</ul>
+</p>
+
+{% if installed==1 %}
+<h3><a href="/uninstall/{{id}}" style="text-decoration:none"> Uninstall </a></h3>
+{% else %}
+<h3><a href="/install/{{id}}" style="text-decoration:none">Install</a></h3>
+{% endif %}
+
+<h3> Reviews: </h3>
+{% if check==1 %}
+{%elif installed==1 %}
+	<form class="form" method="post" action="/writereview/{{id}}">
+		<h4> Rate here:
+		<select name="rating">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		</select></h4>
+		<textarea name="review" cols=30 rows=4 placeholder="write review"></textarea><br>
+		<input type="submit" value="save"><br>
+	</form>
+(%endif %}
+<div>
+	<ol>
+	{% for r in review%}
+		<li> {{r[0]}}: {{r[1]}}</li>
+    {% endfor %}
+	</ol>
+</div>
+{%endblock%}
+	
